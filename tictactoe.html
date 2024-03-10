@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AMTicTacToe</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/icon/favicon.png">
+	</head>
+	
+	<body>
+		<a href="index.html"><--На главную</a>
+
+		<header>
+			<h1>AMTicTacToe</h1>
+			<h3>Игра Крестики-нолики</h3>
+		</header>
+		
+		<p>Имя игрока "Крестик":</p>
+		<p><input id="name1" type="text" value="Игрок 1"></p>
+		<p>Имя игрока "Нолик":</p>
+		<p><input id="name2" type="text" value="Игрок 2"></p>
+		
+		<p><input type="button" value="Поменять имена местами" onclick="fnct1()"></p>
+		
+		<p><input id="str" type="button" value="Начать" onclick="startgame()">
+		<input id="stp" type="button" value="Сбросить" onclick="stop()"></p>
+		<p>Статус: <input id="stat" type="text" value="Игра не начата" readonly></p>
+		
+		<div class="cont">
+			<div class="gamettt">
+				<input id="img1" type="image" src="img/tictactoe/1.png" onclick="game(1)">
+				<input id="img2" type="image" src="img/tictactoe/1.png" onclick="game(2)">
+				<input id="img3" type="image" src="img/tictactoe/1.png" onclick="game(3)"><br>
+				<input id="img4" type="image" src="img/tictactoe/1.png" onclick="game(4)">
+				<input id="img5" type="image" src="img/tictactoe/1.png" onclick="game(5)">
+				<input id="img6" type="image" src="img/tictactoe/1.png" onclick="game(6)"><br>
+				<input id="img7" type="image" src="img/tictactoe/1.png" onclick="game(7)">
+				<input id="img8" type="image" src="img/tictactoe/1.png" onclick="game(8)">
+				<input id="img9" type="image" src="img/tictactoe/1.png" onclick="game(9)"><br>
+			</div>
+		</div><br>
+		
+		<footer>(c) 2021 Alexander Mulyar</footer>
+
+	</body>
+	
+	<script type="text/javascript">
+		
+		function startgame()
+		{
+			stat.value = "Ход крестика";
+		}
+		
+		function stop()
+		{
+			stat.value = "Игра не начата";
+			img1.src = "img/tictactoe/1.png";
+			img2.src = "img/tictactoe/1.png";
+			img3.src = "img/tictactoe/1.png";
+			img4.src = "img/tictactoe/1.png";
+			img5.src = "img/tictactoe/1.png";
+			img6.src = "img/tictactoe/1.png";
+			img7.src = "img/tictactoe/1.png";
+			img8.src = "img/tictactoe/1.png";
+			img9.src = "img/tictactoe/1.png";
+			
+			img1.value = "";
+			img2.value = "";
+			img3.value = "";
+			img4.value = "";
+			img5.value = "";
+			img6.value = "";
+			img7.value = "";
+			img8.value = "";
+			img9.value = "";
+		}
+				
+		function game(x)
+		{
+			if (stat.value == "Игра не начата")
+			{
+				stat.value = "Начните игру";
+			}
+			else
+			{
+				if (x == 1 & stat.value == "Ход крестика")
+				{ img1.src = "img/tictactoe/2.png"; img1.value = "1"; stat.value = "Ход нолика";}
+				else
+				if (x == 1 && stat.value == "Ход нолика")
+				{ img1.src = "img/tictactoe/3.png"; img1.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 2 && stat.value == "Ход крестика")
+				{ img2.src = "img/tictactoe/2.png"; img2.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 2 && stat.value == "Ход нолика")
+				{ img2.src = "img/tictactoe/3.png"; img2.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 3 && stat.value == "Ход крестика")
+				{ img3.src = "img/tictactoe/2.png"; img3.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 3 && stat.value == "Ход нолика")
+				{ img3.src = "img/tictactoe/3.png"; img3.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 4 && stat.value == "Ход крестика")
+				{ img4.src = "img/tictactoe/2.png"; img4.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 4 && stat.value == "Ход нолика")
+				{ img4.src = "img/tictactoe/3.png"; img4.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 5 && stat.value == "Ход крестика")
+				{ img5.src = "img/tictactoe/2.png"; img5.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 5 && stat.value == "Ход нолика")
+				{ img5.src = "img/tictactoe/3.png"; img5.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 6 && stat.value == "Ход крестика")
+				{ img6.src = "img/tictactoe/2.png"; img6.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 6 && stat.value == "Ход нолика")
+				{ img6.src = "img/tictactoe/3.png"; img6.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 7 && stat.value == "Ход крестика")
+				{ img7.src = "img/tictactoe/2.png"; img7.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 7 && stat.value == "Ход нолика")
+				{ img7.src = "img/tictactoe/3.png"; img7.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 8 && stat.value == "Ход крестика")
+				{ img8.src = "img/tictactoe/2.png"; img8.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 8 && stat.value == "Ход нолика")
+				{ img8.src = "img/tictactoe/3.png"; img8.value = "2"; stat.value = "Ход крестика"; }
+				
+				if (x == 9 && stat.value == "Ход крестика")
+				{ img9.src = "img/tictactoe/2.png"; img9.value = "1"; stat.value = "Ход нолика"; }
+				else
+				if (x == 9 && stat.value == "Ход нолика")
+				{ img9.src = "img/tictactoe/3.png"; img9.value = "2"; stat.value = "Ход крестика"; }
+				
+			}
+			getWinner();
+		}
+		
+		function getWinner()
+		{
+			if (
+				(img1.value == "1" && img2.value == "1" && img3.value == "1") ||
+				(img4.value == "1" && img5.value == "1" && img6.value == "1") ||
+				(img7.value == "1" && img8.value == "1" && img9.value == "1") ||
+				(img1.value == "1" && img4.value == "1" && img7.value == "1") ||
+				(img2.value == "1" && img5.value == "1" && img8.value == "1") ||
+				(img3.value == "1" && img6.value == "1" && img9.value == "1") ||
+				(img1.value == "1" && img5.value == "1" && img9.value == "1") ||
+				(img7.value == "1" && img5.value == "1" && img3.value == "1")
+			)
+			{
+				stat.value = name1.value + " победил";
+			}
+			
+			if (
+				(img1.value == "2" && img2.value == "2" && img3.value == "2") ||
+				(img4.value == "2" && img5.value == "2" && img6.value == "2") ||
+				(img7.value == "2" && img8.value == "2" && img9.value == "2") ||
+				(img1.value == "2" && img4.value == "2" && img7.value == "2") ||
+				(img2.value == "2" && img5.value == "2" && img8.value == "2") ||
+				(img3.value == "2" && img6.value == "2" && img9.value == "2") ||
+				(img1.value == "2" && img5.value == "2" && img9.value == "2") ||
+				(img7.value == "2" && img5.value == "2" && img3.value == "2")
+			)
+			{
+				stat.value = name2.value + " победил";
+			}
+		}
+		
+		function fnct1()
+		{
+			var str1 = name1.value;
+			var str2 = name2.value;
+			
+			name1.value = str2;
+			name2.value = str1;
+		}
+		
+	</script>
+	
+	<style type="text/css">
+		header
+		{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 30px;
+			color: #ffffff;
+			background: linear-gradient(135deg, #0000FF 0%, #00BFFF 70%);
+			border-radius: 25px;
+		}
+		
+		body
+		{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 25px;
+			padding-right: 25px;
+			color: #000000;
+		}
+		
+		h1
+		{
+			font-size: 30px;
+		}
+		
+		h3
+		{
+			color: #FFFFFF;
+			text-align: right;
+			padding-right: 25px;
+			font-size: 25px;
+		}
+		
+		input[type="image"]
+		{
+			width: 147px;
+			height: 147px;
+		}
+		
+		footer
+		{
+			text-align: center;
+			padding-left: 15px;
+			border-style: solid ;
+		}
+		
+		input[type="text"]
+		{
+			width: 87%;
+			font-size: 25px;
+		}
+		
+		input[type="button"]
+		{
+			font-size: 25px;
+		}
+		
+		
+		p
+		{
+			font-size: 25px;
+		}
+		
+		p[id="zm1"]
+		{
+			font-size: 15px;
+		}
+		
+		.cont
+        {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .gamettt
+        {
+            border-style: outset;
+            border-width: 15px;
+            width: 460px;
+            height: 460px;
+            margin: auto;
+        }
+	
+	</style>
+</html>

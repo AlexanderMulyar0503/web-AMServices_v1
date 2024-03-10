@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AMFactor</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/icon/favicon.png">
+	</head>
+	
+	<body>
+		<a href="index.html"><--На главную</a>
+		
+		<header>
+			<h1>AMFactor</h1>
+			<h3>Разложение числа на простые множители</h3>
+		</header>
+		
+		<p>Число:</p>
+		<input id="nmb1" type="number" value=0><br><br>
+		<input id="button1" type="button" value="Разложить" onclick="OnClk()"><br><br>
+		<textarea id="listBox1" rows=10></textarea><br><br>
+		
+		<footer>(c) 2021 Alexander Mulyar</footer>
+	</body>
+	
+	<script type="text/javascript">
+	function OnClk()
+	{
+		
+		var num = parseInt(nmb1.value);
+		var i = 2;
+		var x = 0;
+		var mum1 = 0;
+		
+		listBox1.value = "";
+		
+		if (nmb1.value < 2)
+		{
+			listBox1.value = "Недопустимое значение!!!";
+		}
+		else
+		{
+			while (num != 1)
+			{
+				if ((num % i) == 0)
+				{
+					x = x + 1;
+					num1 = num / i;
+					listBox1.value += x.toString() + ") " + i + "\n";
+					i = 2;
+					num = parseInt(num1);
+				}
+				else
+				{
+					i += 1;
+				}
+			}
+		}
+	}
+	</script>
+	
+	<style type="text/css">
+		header
+		{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 30px;
+			color: #ffffff;
+			background: linear-gradient(to right, #4b0082 0%, #FF0000 45%);
+		}
+		
+		body
+		{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 25px;
+			padding-right: 25px;
+			color: #000000;
+		}
+		
+		h1
+		{
+			font-size: 30px;
+		}
+		
+		h3
+		{
+			text-align: right;
+			padding-right: 25px;
+			font-size: 25px;
+		}
+		
+		footer
+		{
+			text-align: center;
+			padding-left: 15px;
+			border-style: solid ;
+		}
+		
+		textarea
+		{
+			width: 100%;
+		}
+		
+		p, ul, input, textarea
+		{
+			font-size: 25px;
+		}
+	</style>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMTag</title>
+        <meta charset="UTF-8">
+		<link rel="icon" href="img/icon/favicon.png">
+    </head>
+
+    <body>
+        <a href="index.html"><-- На главную</a>
+
+        <header>
+            <h1>AMTag</h1>
+            <h3>Пятнашки (Игра в 15)</h3>
+        </header>
+
+        <br><input id="startGame" type="button" value="Начать игру" onclick="Start()"><br>
+        <br><input id="startGame" type="button" value="Сброс" onclick="StopGm()"><br><br>
+        <input id="status1" type="text" value="Начните игру" readonly><br><br>
+
+        <div class="cont">
+            <div class="gameTag">
+                <input id="btn1" type="button" value="1" onclick="Game(1)">
+                <input id="btn2" type="button" value="2" onclick="Game(2)">
+                <input id="btn3" type="button" value="3" onclick="Game(3)">
+                <input id="btn4" type="button" value="4" onclick="Game(4)"><br>
+                <input id="btn5" type="button" value="5" onclick="Game(5)">
+                <input id="btn6" type="button" value="6" onclick="Game(6)">
+                <input id="btn7" type="button" value="7" onclick="Game(7)">
+                <input id="btn8" type="button" value="8" onclick="Game(8)"><br>
+                <input id="btn9" type="button" value="9" onclick="Game(9)">
+                <input id="btn10" type="button" value="10" onclick="Game(10)">
+                <input id="btn11" type="button" value="11" onclick="Game(11)">
+                <input id="btn12" type="button" value="12" onclick="Game(12)"><br>
+                <input id="btn13" type="button" value="13" onclick="Game(13)">
+                <input id="btn14" type="button" value="14" onclick="Game(14)">
+                <input id="btn15" type="button" value="15" onclick="Game(15)">
+                <input id="btn16" type="button" value=" " onclick="Game(16)">
+            </div>
+        </div><br>
+
+    </body>
+
+    <footer>(c) 2021 Alexander Mulyar</footer>
+
+    <script type="text/javascript">
+
+        function getRandom(min, max)
+		{
+			return Math.trunc(Math.random() * (max - min) + min);
+		}
+		
+		function StopGm()
+		{
+			btn1.value = "1";
+			btn2.value = "2";
+			btn3.value = "3";
+			btn4.value = "4";
+			btn5.value = "5";
+			btn6.value = "6";
+			btn7.value = "7";
+			btn8.value = "8";
+			btn9.value = "9";
+			btn10.value = "10";
+			btn11.value = "11";
+			btn12.value = "12";
+			btn13.value = "13";
+			btn14.value = "14";
+			btn15.value = "15";
+			btn16.value = " ";
+			status1.value = "Начните игру"
+		}
+		
+		function getWinner()
+		{
+			if
+			((btn1.value == "1")&
+			(btn2.value == "2")&
+			(btn3.value == "3")&
+			(btn4.value == "4")&
+			(btn5.value == "5")&
+			(btn6.value == "6")&
+			(btn7.value == "7")&
+			(btn8.value == "8")&
+			(btn9.value == "9")&
+			(btn10.value == "10")&
+			(btn11.value == "11")&
+			(btn12.value == "12")&
+			(btn13.value == "13")&
+			(btn14.value == "14")&
+			(btn15.value == "15"))
+			{ status1.value = "Вы выиграли!"; }
+		}
+
+        function Start()
+        {
+            
+            
+            var x = 0;
+            var bl = false;
+            
+            var arr1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            
+            var i = 0;
+            
+            while (i < 15)
+            {
+				x = getRandom(1, 16);
+				
+				for (let i1 = 0; i1 < 15; i1++)
+				{
+					if (x == arr1[i1]) { bl = true; }
+				}
+				
+				if (bl == false) { arr1[i] = x; i++; }
+				bl = false;
+			}
+
+            btn1.value = arr1[0].toString();
+            btn2.value = arr1[1].toString();
+            btn3.value = arr1[2].toString();
+            btn4.value = arr1[3].toString();
+            btn5.value = arr1[4].toString();
+            btn6.value = arr1[5].toString();
+            btn7.value = arr1[6].toString();
+            btn8.value = arr1[7].toString();
+            btn9.value = arr1[8].toString();
+            btn10.value = arr1[9].toString();
+            btn11.value = arr1[10].toString();
+            btn12.value = arr1[11].toString();
+            btn13.value = arr1[12].toString();
+            btn14.value = arr1[13].toString();
+            btn15.value = arr1[14].toString();
+            btn16.value = " ";
+
+            status1.value = "Игра начата";
+        }
+
+        function Game(x)
+        {
+			if (status1.value == "Игра начата")
+			{
+				var xx1 = btn1;
+				var yy1 = btn2;
+				var yy = 0;
+
+				// getNull
+				if (btn1.value == " ") { yy1 = btn1; yy = 1; }
+				if (btn2.value == " ") { yy1 = btn2; yy = 2; }
+				if (btn3.value == " ") { yy1 = btn3; yy = 3; }
+				if (btn4.value == " ") { yy1 = btn4; yy = 4; }
+				if (btn5.value == " ") { yy1 = btn5; yy = 5; }
+				if (btn6.value == " ") { yy1 = btn6; yy = 6; }
+				if (btn7.value == " ") { yy1 = btn7; yy = 7; }
+				if (btn8.value == " ") { yy1 = btn8; yy = 8; }
+				if (btn9.value == " ") { yy1 = btn9; yy = 9; }
+				if (btn10.value == " ") { yy1 = btn10; yy = 10; }
+				if (btn11.value == " ") { yy1 = btn11; yy = 11; }
+				if (btn12.value == " ") { yy1 = btn12; yy = 12; }
+				if (btn13.value == " ") { yy1 = btn13; yy = 13; }
+				if (btn14.value == " ") { yy1 = btn14; yy = 14; }
+				if (btn15.value == " ") { yy1 = btn15; yy = 15; }
+				if (btn16.value == " ") { yy1 = btn16; yy = 16; }
+
+				//getBtn
+				if (x == 1) { xx1 = btn1; }
+				if (x == 2) { xx1 = btn2; }
+				if (x == 3) { xx1 = btn3; }
+				if (x == 4) { xx1 = btn4; }
+				if (x == 5) { xx1 = btn5; }
+				if (x == 6) { xx1 = btn6; }
+				if (x == 7) { xx1 = btn7; }
+				if (x == 8) { xx1 = btn8; }
+				if (x == 9) { xx1 = btn9; }
+				if (x == 10) { xx1 = btn10; }
+				if (x == 11) { xx1 = btn11; }
+				if (x == 12) { xx1 = btn12; }
+				if (x == 13) { xx1 = btn13; }
+				if (x == 14) { xx1 = btn14; }
+				if (x == 15) { xx1 = btn15; }
+				if (x == 16) { xx1 = btn16; }
+
+				// 1 2 3 4
+				if (x == 1 & (yy == 2 | yy == 5)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 2 & (yy == 1 | yy == 6 | yy == 3 )) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 3 & (yy == 2 | yy == 7 | yy == 4 )) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 4 & (yy == 3 | yy == 8)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				
+				// 13 14 15 16
+				if (x == 13 & (yy == 9 | yy == 14)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 14 & (yy == 13 | yy == 10 | yy == 15)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 15 & (yy == 14 | yy == 11 | yy == 16)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 16 & (yy == 15 | yy == 12)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+
+				// 5 6 7 8
+				if (x == 5 & (yy == 1 | yy == 6 | yy == 9)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 6 & (yy == 5 | yy == 2 | yy == 10 | yy == 7)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 7 & (yy == 6 | yy == 3 | yy == 11 | yy == 8)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 8 & (yy == 7 | yy == 4 | yy == 12)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+
+				// 9 10 11 12
+				if (x == 9 & (yy == 5 | yy == 10 | yy == 13)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 10 & (yy == 9 | yy == 6 | yy == 14 | yy == 11)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 11 & (yy == 10 | yy == 7 | yy == 15 | yy == 12)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				if (x == 12 & (yy == 11 | yy == 8 | yy == 16)) { var i = xx1.value; xx1.value = yy1.value; yy1.value = i; }
+				
+				getWinner();
+			}
+        }
+
+    </script>
+
+    <style type="text/css">
+
+        header
+		{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 30px;
+			color: #ffffff;
+			background: linear-gradient(135deg, #0000FF 0%, #008080 70%);
+			border-radius: 25px;
+		}
+
+        h1
+		{
+			font-size: 30px;
+		}
+		
+		h3
+		{
+			text-align: right;
+			padding-right: 25px;
+			font-size: 25px;
+		}
+
+        footer
+		{
+			text-align: center;
+			padding-left: 15px;
+			border-style: solid ;
+		}
+
+        p, ul, input
+		{
+			font-size: 25px;
+		}
+
+        input[type="button"]
+        {
+            width: 75px;
+            height: 75px;
+            margin: 5px;
+        }
+
+        input[id="startGame"]
+        {
+            width: 100%;
+            height: 55px;
+        }
+
+        input[id="status"]
+        {
+            width: 99%;
+        }
+
+        .cont
+        {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .gameTag
+        {
+            border-style: outset;
+            border-width: 15px;
+            width: 360px;
+            height: 360px;
+            margin: auto;
+        }
+    </style>
+</html>

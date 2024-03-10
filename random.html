@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AMRandom</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/icon/favicon.png">
+	</head>
+	
+	<body>
+		<a href="index.html"><--На главную</a>
+		
+		<header>
+			<h1>AMRandom</h1>
+			<h3>Генератор случайных чисел</h3>
+		</header>
+		
+		<p>Начальное значение:</p>
+		<input id="minVl" type="number" value=0>
+		
+		<p>Конечное значение:</p>
+		<input id="maxVl" type="number" value=9><br><br>
+		
+		<input type="button" value="Сгенерировать" onclick="OnClk()"><br><br>
+		
+		<p>От "MIN" до "MAX - 1"</p>
+		<input id="textBox1" type="text" value="Здесь будет число..." readonly><br><br>
+		
+		
+		<footer>(c) 2021 Alexander Mulyar</footer>
+	</body>
+	
+	<script type="text/javascript">
+		
+		function OnClk()
+		{
+			var x = 0;
+			var y = 0;
+			var z = 0;
+			
+			x = maxVl.value;
+			y = minVl.value;
+			
+			z = Math.trunc(Math.random() * (x - y) + y);
+			
+			textBox1.value = z;
+		}
+		
+	</script>
+	
+	<style type="text/css">
+		header
+		{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 30px;
+			color: #ffffff;
+			background: linear-gradient(to right, #4b0082 0%, #FFA500 45%);
+		}
+		
+		body
+		{
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 25px;
+			padding-right: 25px;
+			color: #000000;
+		}
+		
+		h1
+		{
+			font-size: 30px;
+		}
+		
+		h3
+		{
+			color: #FFFFFF;
+			text-align: right;
+			padding-right: 25px;
+			font-size: 25px;
+		}
+		
+		footer
+		{
+			text-align: center;
+			padding-left: 15px;
+			border-style: solid ;
+		}
+		
+		p, ul, input, textarea
+		{
+			font-size: 25px;
+		}
+		
+		input[type="text"]
+		{
+			width: 98%;
+		}
+		
+		input[type="button"]
+		{
+			width: 99%;
+		}
+		
+		textarea
+		{
+			width: 100%;
+		}
+	</style>
+</html>
